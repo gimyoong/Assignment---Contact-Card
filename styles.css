@@ -1,0 +1,81 @@
+* {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+h1 {
+	margin: 20px;
+	color: #121212;
+	text-shadow: 2px 2px #cccccc;
+}
+#input_area, #contact_cards {
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px;
+}
+#input_area {
+	width: 210px;
+	padding: 10px 50px 15px;
+	border: 1px solid #eeeeee;
+	background: #fbfbfb;
+}
+img {
+	width: 180px;
+}
+textarea {
+	width: 200px;
+	height: 100px;
+}
+input[type="submit"] {
+	background: #cccccc;
+	width: 210px;
+	height: 40px;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+button {
+	width: 210px;
+	background: #ffffff;
+	border: none;
+	margin-bottom: 10px;
+}
+.cc {
+	width: 310px;
+	height: 140px auto;
+	min-height: 140px;
+	background: linear-gradient(#eeeeee, #aaaaaa);
+	text-align: center;
+	border: 1px solid black;
+	margin: 0px 0px 14px;
+	word-wrap: break-word;
+}
+.num {
+	position: absolute;
+	margin: 0px;
+	color: #cccccc;
+}
+#next_btn {
+	border: 1px solid #dddddd;
+	width: 140px;
+	margin-left: 150px;
+	color: #ffffff;
+	background: #000000;
+}
+.name {
+	font-size: 26px;
+	color: blue;
+	font-family: Georgia, serif;
+	text-shadow: 2px 2px #dddddd;
+}
+.hidden {
+	display: none;
+}
+#back_to_top {
+	display: block;
+	color: #121212;
+	margin-left: 20px;
+}
+h6 {
+	color: #b3b3b3;
+	text-align: right;
+	margin: 0px;
+
+}

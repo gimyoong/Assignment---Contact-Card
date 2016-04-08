@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>The Coding Dojo Contact Page</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+    	// your jQuery codes will go here
+    		var cc_counter = 1;
+    		
+    		$("form").submit(function(){
+    			$("#cc"+cc_counter).text("");
+    			$("#cc"+(cc_counter-1)).after("<div id='cc" + cc_counter + "' class='cc'></div>");  			
+    			$("#cc"+cc_counter).append("<h4 class='num'>" + cc_counter + "</h4><h4 class='name'>" + $("#first_name").val() + " "+ $("#last_name").val() + "</h4>" + "<h4>Click for description</h4>");
+    			$("#cc"+cc_counter).append("<h4 class='hidden'>"+$("#description").val()+"</h4>");
+    			$("#input_area").append("<a href='#cc" + cc_counter + "'><img src='black_belt.png' alt='Black Belt Ninja' style='width:42px' title='" + cc_counter + ". " +$("#first_name").val() + " "+ $("#last_name").val() + "'></a>");
+
+    			if (cc_counter == 1) {
+    				$("button").text("Reset " + cc_counter + " Ninja");
+    			}
+    			else if (cc_counter > 1) {
+    				$("button").text("Reset " + cc_counter + " Ninjas");
+    			} 
+
+    			cc_counter++;
+    			return false;
+    		});
+ 			
+    		$(document).on("click", '.cc', function(){
+    			console.log(this);
+    			$(this.children).toggle(300);
+    			console.log($(this).css('background'));
+    			if ($(this).css('background')=='rgba(0, 0, 0, 0) linear-gradient(rgb(238, 238, 238), rgb(170, 170, 170)) repeat scroll 0% 0% / auto padding-box border-box') {
+    				$(this).css('background','linear-gradient(#aaaaaa, #000000)');
+    				$(this).css('color','white');
+    			}
+    			else if ($(this).css('background')=='rgba(0, 0, 0, 0) linear-gradient(rgb(170, 170, 170), rgb(0, 0, 0)) repeat scroll 0% 0% / auto padding-box border-box'){
+    				$(this).css('background','linear-gradient(#eeeeee, #aaaaaa)');
+	    			$(this).css('color','black');
+	    		}
+    		});
+
+    		$("button").click(function(){
+    			if (confirm("Click 'OK' to reset everything.") == true) {
+    				location.reload();
+    			}
+    		});
+		});
+	</script>
+</head>
+<body>
+	<div id="container">
+		<h1>The Coding Dojo Contact Page</h1>
+		<hr>
+		<div id="input_area">
+			<img src="coding_dojo.png" alt="Coding Dojo Logo">
+			<form>
+				<p>First name: <input class="text_input" id="first_name" type="text"></p>
+				<p>Last name: <input class="text_input" id="last_name" type="text"></p>
+				<p>Description:<br><br>
+				<textarea id="description" placeholder="Enter description"></textarea>
+				</p>
+				<input type="submit" value="Add User" />
+			</form>
+			<button>Reset</button>
+		</div>
+		<div id="contact_cards">
+			<div id="cc1" class="cc">
+				<p>Welcome!</p>
+				<p>This is The Coding Dojo Contact Page.</p>
+				<p id="next_btn">Next >></p>
+				<p class="hidden">Please enter 'First name', 'Last name' and 'Description'.</p>
+				<p class="hidden">Click 'Add User' button when done!</p>
+			</div>
+			
+		</div>
+		<a href="#container" id="back_to_top">Back to top</a>
+		<hr>
+		<h6>© 2016 Yung Kim</h6>
+	</div>
+
+</body>
+</html>
